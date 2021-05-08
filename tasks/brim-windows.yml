@@ -1,0 +1,15 @@
+---
+
+- name: Download Brim
+  win_get_url:
+    url: "{{ brim_pkg }}"
+    checksum: "{{ brim_checksum | default(omit) }}"
+    dest: "c:/users/public"
+  register: dl_result
+  until: dl_result is success
+
+- name: Install Brim
+  win_package:
+    path: "c:/users/public/{{ brim_pkg | win_basename }}"
+    # product_id:
+    state: present

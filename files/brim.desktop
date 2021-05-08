@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Brim
+Exec=/bin/brim
+Comment=Desktop application to efficiently search large packet captures and Zeek logs. 
+Icon=
+NoDisplay=false
+Categories=Internet;
+Type=Application

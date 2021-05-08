@@ -1,0 +1,3 @@
+---
+
+brim_pkg: "https://github.com/brimsec/brim/releases/download/{{ brim_version }}/brim_x86_64.rpm"

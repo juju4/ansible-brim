@@ -1,0 +1,14 @@
+---
+# tasks file for juju4.brim
+
+- name: Include version-specific variables for OS family.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- include: brim-linux.yml
+  when: ansible_os_family != "Windows" and ansible_os_family != 'Darwin'
+
+- include: brim-darwin.yml
+  when: ansible_os_family == 'Darwin'
+
+- include: brim-windows.yml
+  when: ansible_os_family == "Windows"

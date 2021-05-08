@@ -1,0 +1,36 @@
+---
+
+- name: Download Brim
+  get_url:
+    url: "{{ brim_pkg }}"
+    checksum: "{{ brim_checksum | default(omit) }}"
+    dest: "/var/tmp"
+    mode: '0644'
+  register: dl_result
+  until: dl_result is success
+
+- name: Install brim dependencies
+  package:
+    name: "{{ brim_deps | default([]) }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Debian | Install brim package
+  apt:
+    deb: "/var/tmp/{{ brim_pkg | basename }}"
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Non-Debian | Install brim package
+  package:
+    name: "/var/tmp/{{ brim_pkg | basename }}"
+    state: present
+    disable_gpg_check: "{{ brim_rpm_disable_gpg_check | default('yes') }}"
+  when: ansible_os_family != 'Debian'
+
+- name: Add Brim applications desktop shortcut
+  copy:
+    src: brim.desktop
+    dest: /usr/share/applications/
+    mode: '0644'

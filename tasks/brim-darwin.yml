@@ -1,0 +1,10 @@
+---
+
+- name: Download Brim
+  get_url:
+    url: "{{ brim_pkg }}"
+    checksum: "{{ brim_checksum | default(omit) }}"
+    dest: "/var/tmp"
+    mode: '0644'
+  register: dl_result
+  until: dl_result is success

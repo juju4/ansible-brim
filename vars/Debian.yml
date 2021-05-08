@@ -1,0 +1,6 @@
+---
+
+brim_pkg: "https://github.com/brimsec/brim/releases/download/{{ brim_version }}/brim_amd64.deb"
+
+brim_deps:
+  - libgtk-3-0
