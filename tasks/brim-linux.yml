@@ -9,11 +9,16 @@
   register: dl_result
   until: dl_result is success
 
+- name: Debian | update apt cache
+  apt:
+    update_cache: yes
+    cache_valid_time: "{{ brim_apt_cache_valid_time | default(3600) }}"
+  when: ansible_os_family == 'Debian'
+
 - name: Install brim dependencies
   package:
     name: "{{ brim_deps | default([]) }}"
     state: present
-    update_cache: yes
     cache_valid_time: 3600
 
 - name: Debian | Install brim package
