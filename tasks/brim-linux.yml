@@ -19,7 +19,6 @@
   package:
     name: "{{ brim_deps | default([]) }}"
     state: present
-    cache_valid_time: 3600
 
 - name: Debian | Install brim package
   apt:
