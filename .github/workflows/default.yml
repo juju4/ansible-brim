@@ -18,9 +18,10 @@ jobs:
       matrix:
         # python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
         python-version: [3.8]
-        molecule_distro: ['centos:8', 'centos:7', 'ubuntu:20.04', 'ubuntu:18.04']
         include:
-          - molecule_distro: 'centos:8'
+          - molecule_distro: 'redhat/ubi8'
+            experimental: false
+          - molecule_distro: 'rockylinux:8'
             experimental: false
           - molecule_distro: 'centos:7'
             experimental: true
