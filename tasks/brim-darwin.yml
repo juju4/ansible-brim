@@ -1,7 +1,7 @@
 ---
 
 - name: Download Brim
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ brim_pkg }}"
     checksum: "{{ brim_checksum | default(omit) }}"
     dest: "/var/tmp"

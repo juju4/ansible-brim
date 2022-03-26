@@ -1,7 +1,7 @@
 ---
 
 - name: Download Brim
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ brim_pkg }}"
     checksum: "{{ brim_checksum | default(omit) }}"
     dest: "/var/tmp"
@@ -10,31 +10,31 @@
   until: dl_result is success
 
 - name: Debian | update apt cache
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
     cache_valid_time: "{{ brim_apt_cache_valid_time | default(3600) }}"
   when: ansible_os_family == 'Debian'
 
 - name: Install brim dependencies
-  package:
+  ansible.builtin.package:
     name: "{{ brim_deps | default([]) }}"
     state: present
 
 - name: Debian | Install brim package
-  apt:
+  ansible.builtin.apt:
     deb: "/var/tmp/{{ brim_pkg | basename }}"
     state: present
   when: ansible_os_family == 'Debian'
 
 - name: Non-Debian | Install brim package
-  package:
+  ansible.builtin.package:
     name: "/var/tmp/{{ brim_pkg | basename }}"
     state: present
     disable_gpg_check: "{{ brim_rpm_disable_gpg_check | default('yes') }}"
   when: ansible_os_family != 'Debian'
 
 - name: Add Brim applications desktop shortcut
-  copy:
+  ansible.builtin.copy:
     src: brim.desktop
     dest: /usr/share/applications/
     mode: '0644'

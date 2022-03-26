@@ -5,8 +5,8 @@
   gather_facts: false
   tasks:
     - name: Gather package facts
-      package_facts:
+      ansible.builtin.package_facts:
         manager: auto
     - name: Validate that needed packages are present
-      assert:
+      ansible.builtin.assert:
         that: ansible_facts.packages['brim']
