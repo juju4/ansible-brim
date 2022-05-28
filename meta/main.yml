@@ -4,12 +4,11 @@ galaxy_info:
   author: juju4
   description: Install Brimsec Brim, an open source desktop application for security and network specialists
   license: BSD
-  min_ansible_version: 1.9
+  min_ansible_version: '1.9'
   platforms:
     - name: EL
       versions:
-        - 8
-        - 7
+        - all
     - name: Ubuntu
       versions:
         - focal
