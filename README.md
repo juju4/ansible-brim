@@ -3,7 +3,8 @@
 
 # brim ansible role
 
-Install [Brimsec Brim](https://github.com/brimsec/brim/), an open source desktop application for security and network specialists
+Install [Brimsec Brim](https://github.com/brimsec/brim/), an open source desktop application for security and network specialists.
+In 2023, this has moved to now being [Brimdata Zui](https://github.com/brimdata/zui#formerly-known-as-brim)
 
 ## Requirements & Dependencies
 

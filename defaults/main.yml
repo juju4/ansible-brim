@@ -1,5 +1,5 @@
 ---
 # defaults file for juju4.brim
 
-brim_version: 0.31.0
+brim_version: 1.0.1
 # brim_checksum: "sha256:xxxxx"

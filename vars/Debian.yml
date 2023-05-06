@@ -1,6 +1,6 @@
 ---
 
-brim_pkg: "https://github.com/brimdata/brim/releases/download/v{{ brim_version }}/Brim-{{ brim_version }}.deb"
+brim_pkg: "https://github.com/brimdata/zui/releases/download/v{{ brim_version }}/zui-{{ brim_version }}_amd64.deb"
 
 brim_deps:
   - libgtk-3-0
