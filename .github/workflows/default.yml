@@ -24,6 +24,8 @@ jobs:
         # python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
         python-version: [3.8]
         include:
+          - molecule_distro: 'rockylinux:9'
+            experimental: false
           - molecule_distro: 'redhat/ubi8'
             experimental: false
           - molecule_distro: 'rockylinux:8'
