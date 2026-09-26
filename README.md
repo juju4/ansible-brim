@@ -1,7 +1,7 @@
-[![Actions Status - Master](https://github.com/juju4/ansible-brim/workflows/AnsibleCI/badge.svg)](https://github.com/juju4/ansible-brim/actions?query=branch%3Amaster)
-[![Actions Status - Devel](https://github.com/juju4/ansible-brim/workflows/AnsibleCI/badge.svg?branch=devel)](https://github.com/juju4/ansible-brim/actions?query=branch%3Adevel)
-
 # brim ansible role
+
+[![Actions Status - Main](https://github.com/juju4/ansible-brim/workflows/AnsibleCI/badge.svg)](https://github.com/juju4/ansible-brim/actions?query=branch%3Amain)
+[![Actions Status - Devel](https://github.com/juju4/ansible-brim/workflows/AnsibleCI/badge.svg?branch=devel)](https://github.com/juju4/ansible-brim/actions?query=branch%3Adevel)
 
 Install [Brimsec Brim](https://github.com/brimsec/brim/), an open source desktop application for security and network specialists.
 In 2023, this has moved to now being [Brimdata Zui](https://github.com/brimdata/zui#formerly-known-as-brim)
